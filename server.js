@@ -1,20 +1,16 @@
+// set up routes
 const express = require("express");
-const path = require("path");
-const app = express();
-const PORT = 3001;
+const routes = require("/routes");
 
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+app.use(express.json("public"));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/", (rec, res) => res.send("Navigate to /send or /routes"));
-
-app.get("/send", (req, res) =>
-  res.sendFile(path.join(__dirname, "public/send.html"))
-);
-
-app.get("/paths", (req, res) =>
-  res.sendFile(path.join(__dirname, "public/paths.html"))
-);
+app.use(routes);
 
 app.listen(PORT, () => {
-  console.log(`App listening AT HTTP://LOCALHOST:${PORT}`);
+  console.log(`App listening AT HTTP://localhost:${PORT}`);
 });
