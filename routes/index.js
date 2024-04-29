@@ -4,7 +4,7 @@ const path = require("path");
 
 // set variables for api and notes routes
 const apiRoutes = require("./api");
-const notesRoutes = require("./notes");
+const notesRouter = require("./notes");
 
 // Add "/api" prefix to all routes in the api director
 router.use("/api", apiRoutes);

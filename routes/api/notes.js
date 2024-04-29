@@ -1,26 +1,31 @@
 const { parse } = require("path");
 const router = require("express").Router();
 const { readFile, writeFile } = require("fs").promises;
+const { v4: uuidv4 } = require("uuid");
 
 // Routed to http:localhost:3001/api/notes
 // declared keys for unique id, title, and text.
 router.post("/", async (req, res) => {
+  const newId = uuidv4();
+  console.log(newId);
+  console.log(req.body.title);
+  console.log(req.body.text);
   const newNote = {
-    id: crypto.randomUUID(),
+    id: newId,
     title: req.body.title,
     text: req.body.text,
   };
 
   // read existing database, parse and stringify to parsedDB
   try {
-    const existingDB = await readFile("db/db.json");
+    const existingDB = (await readFile("db/db.json")) || [];
     const parsedDB = JSON.parse(existingDB);
     parsedDB.push(newNote);
     await writeFile("db/db.json", JSON.stringify(parsedDB));
     res.json("New note successfully saved to database.");
     // check for errors using try/catch
   } catch (err) {
-    res.status(500).json(error.message);
+    res.status(500).json(err.message);
   }
 });
 
