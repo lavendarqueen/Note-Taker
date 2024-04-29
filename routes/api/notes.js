@@ -7,9 +7,9 @@ const { v4: uuidv4 } = require("uuid");
 // declared keys for unique id, title, and text.
 router.post("/", async (req, res) => {
   const newId = uuidv4();
-  console.log(newId);
-  console.log(req.body.title);
-  console.log(req.body.text);
+  // console.log(newId);
+  // console.log(req.body.title);
+  // console.log(req.body.text);
   const newNote = {
     id: newId,
     title: req.body.title,
