@@ -1,7 +1,7 @@
 [
   {
     "id": "edb5af0d-f9e8-4468-966b-cb13a2430363",
-    "title": "Creat database",
+    "title": "Create database",
     "text": "First post"
   },
   {
@@ -13,5 +13,10 @@
     "id": "0d299339-3915-40be-8047-e65814db1faf",
     "title": "Learn React",
     "text": "Third note"
+  },
+  {
+    "id": "27b3521a-ded4-4021-9632-26a54b19402e",
+    "title": "Testing Notes",
+    "text": "I hope this works!"
   }
 ]
