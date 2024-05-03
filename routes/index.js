@@ -11,9 +11,4 @@ router.use("/api", apiRoutes);
 // Assign http:localhost:3001/notes route to the notes.js file in the routes folder
 router.use("/notes", notesRouter);
 
-// Get index.html file
-router.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "../public/index.html"))
-);
-
 module.exports = router;
