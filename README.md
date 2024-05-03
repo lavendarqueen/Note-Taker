@@ -45,7 +45,7 @@ I collaborated with Melissa Cade, Instructor Benjamin Machock, and Tutor Andrew 
 
 I also used the third-party assets listed below:
 
-- University of Denver Coding Bootcamp class materials;
+- University of Denver Coding Bootcamp starter code and study materials
 - MDN web docs: https://developer.mozilla.org/en-US/
 - W3 Schools: https://www.w3schools.com/
 - StackOverflow: https://stackoverflow.com/
